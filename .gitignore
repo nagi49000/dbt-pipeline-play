@@ -161,3 +161,5 @@ cython_debug/
 
 # dbt
 *.user.yml
+dbt_packages/
+
