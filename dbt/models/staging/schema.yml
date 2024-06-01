@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_randomusers
+    columns:
+      - name: gender
+      - name: email
+      - name: phone
+      - name: cell
+      - name: nationality
+      - name: title
+      - name: first_name
+      - name: last_name
+      - name: street_number
+      - name: street_name
+      - name: city
+      - name: state
+      - name: country
+      - name: postcode
+      - name: dob
+      - name: age
