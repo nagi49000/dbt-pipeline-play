@@ -19,7 +19,10 @@ renamed as  (
         location__country as country,
         location__postcode as postcode,
         dob__date as dob,
-        dob__age as age
+        dob__age as age,
+        login__uuid as uuid,
+        login__username as username,
+        login__password as password
 
     from source
 )

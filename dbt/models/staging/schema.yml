@@ -4,18 +4,86 @@ models:
   - name: stg_randomusers
     columns:
       - name: gender
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['male', 'female']
       - name: email
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: phone
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: cell
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: nationality
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: title
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: first_name
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: last_name
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: street_number
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
       - name: street_name
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: city
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: state
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: country
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: postcode
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: dob
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
       - name: age
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 120
+              inclusive: false
+      - name: uuid
+        data_tests:
+          - unique
+          - not_null
+          - dbt_utils.not_empty_string
+      - name: username
+        data_tests:
+          - unique
+          - not_null
+          - dbt_utils.not_empty_string
+      - name: password
+        data_tests:
+          - not_null
+          - dbt_utils.not_empty_string
