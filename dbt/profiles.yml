@@ -3,4 +3,4 @@ myprofile:
   outputs:
     duckdbdev:
       type: duckdb
-      path: 'duckdb-database.db'
+      path: 'data/duckdb-database.db'

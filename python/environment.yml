@@ -8,3 +8,5 @@ dependencies:
   - pip:
       - dbt-duckdb==1.8.0
       - duckdb==0.10.3
+      - pandas==2.2.2
+      - pytest==8.2.1
