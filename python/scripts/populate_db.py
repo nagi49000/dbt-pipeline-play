@@ -2,6 +2,7 @@ import requests
 import duckdb
 from typing import Generator
 from pandas import json_normalize, DataFrame
+from pathlib import Path
 
 
 def get_randomuser_records(n_record: int = 3) -> Generator[dict, None, None]:
@@ -29,4 +30,5 @@ def create_or_insert_into_duckdb(n_record: int, filename: str, tablename="random
 
 
 if __name__ == "__main__":
-    print("hola")
+    db_filename = Path(__file__).parents[2] / "dbt" / "data" / "duckdb-database.db"
+    create_or_insert_into_duckdb(11, db_filename)
