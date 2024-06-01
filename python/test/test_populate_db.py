@@ -14,5 +14,5 @@ def test_create_or_insert_into_duckdb(tmp_path):
     create_or_insert_into_duckdb(7, db_filename)
     create_or_insert_into_duckdb(3, db_filename)
     with duckdb.connect(str(db_filename)) as con:
-        assert con.sql("SHOW TABLES").df()["name"].values == ["random_user"]
-        assert con.sql("SELECT COUNT(*) AS n_row FROM random_user").df()["n_row"].values == [10]
+        assert con.sql("SHOW TABLES").df()["name"].values == ["raw_random_user"]
+        assert con.sql("SELECT COUNT(*) AS n_row FROM raw_random_user").df()["n_row"].values == [10]

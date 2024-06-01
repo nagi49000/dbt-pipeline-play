@@ -14,15 +14,15 @@ def get_randomuser_records(n_record: int = 3) -> Generator[dict, None, None]:
         nested_record = resp.json()["results"][0]
         # via a pandas dataframe, flatten the json with subsections marked with a "."
         flat_record = json_normalize(nested_record).to_dict()
-        # undo the fact that every value looks like {"0": actual_value}
-        flat_record = {k: v[0] for k, v in flat_record.items()}
+        # undo the fact that every value looks like {"0": actual_value}, and replace the "." with "__" in keys
+        flat_record = {k.replace(".", "__"): v[0] for k, v in flat_record.items()}
         yield flat_record
 
 
-def create_or_insert_into_duckdb(n_record: int, filename: str, tablename="random_user"):
+def create_or_insert_into_duckdb(n_record: int, filename: str, tablename="raw_random_user"):
     df = DataFrame.from_dict(get_randomuser_records(n_record))
     with duckdb.connect(str(filename)) as con:
-        is_table_existing = "random_user" in con.sql("SHOW TABLES").df()["name"].values
+        is_table_existing = tablename in con.sql("SHOW TABLES").df()["name"].values
         if is_table_existing:
             con.sql(f"INSERT INTO {tablename} SELECT * FROM df")
         else:

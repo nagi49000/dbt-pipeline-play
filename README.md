@@ -18,6 +18,8 @@ python python/scripts/populate_db.py
 
 ### Initialise DBT
 
+[What is DBT?](https://docs.getdbt.com/docs/introduction)
+
 There should already be a defined profile in the `./dbt/` directory. Any dependencies can be installed via
 ```bash
 # in ./dbt/
