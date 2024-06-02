@@ -1,6 +1,6 @@
 with source as (
     select
-        uuid,
+        concat(street_number, ' ', postcode) as location_id,
         street_number,
         street_name,
         city,

@@ -3,6 +3,7 @@ version: 2
 models:
   - name: bronze_user
     columns:
+      - name: full_name
       - name: gender
       - name: nationality
       - name: title
@@ -11,10 +12,15 @@ models:
       - name: dob
       - name: age
       - name: uuid
+      - name: location_id
 
   - name: bronze_contacts
     columns:
       - name: uuid
+        data_tests:
+          - relationships:
+              to: ref('bronze_user')
+              field: uuid
       - name: email
       - name: phone
       - name: cell
@@ -22,12 +28,20 @@ models:
   - name: bronze_login
     columns:
       - name: uuid
+        data_tests:
+          - relationships:
+              to: ref('bronze_user')
+              field: uuid
       - name: username
       - name: password
 
   - name: bronze_location
     columns:
-      - name: uuid
+      - name: location_id
+        data_tests:
+          - relationships:
+              to: ref('bronze_user')
+              field: location_id
       - name: street_number
       - name: street_name
       - name: city
