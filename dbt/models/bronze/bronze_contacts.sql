@@ -4,8 +4,8 @@ with source as (
     select
         uuid,
         email,
-        phone,
-        cell
+        {{ make_phone_alphas_numeric(phone) }} as phone_numeric,
+        {{ make_cell_alphas_numeric(cell) }} as cell_numeric,
 
     from {{ ref('stg_randomusers') }}
 )

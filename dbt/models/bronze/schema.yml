@@ -22,7 +22,7 @@ models:
               to: ref('bronze_user')
               field: uuid
       - name: email
-      - name: phone
+      - name: phone_numeric
       - name: cell
 
   - name: bronze_login

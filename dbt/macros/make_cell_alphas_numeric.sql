@@ -1,4 +1,4 @@
-{% macro make_phone_alphas_numeric(phone) %}
+{% macro make_cell_alphas_numeric(cell) %}
 
         replace(
         replace(
@@ -26,7 +26,7 @@
         replace(
         replace(
         replace(
-            phone,
+            cell,
         'A', '2'),
         'B', '2'),
         'C', '2'),
