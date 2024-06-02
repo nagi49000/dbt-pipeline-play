@@ -23,7 +23,11 @@ models:
               field: uuid
       - name: email
       - name: phone_numeric
-      - name: cell
+        data_tests:
+          - expect_valid_phone_number
+      - name: cell_numeric
+        data_tests:
+          - expect_valid_phone_number
 
   - name: bronze_login
     columns:

@@ -26,6 +26,10 @@
         replace(
         replace(
         replace(
+        replace(
+        replace(
+        replace(
+        replace(
             phone,
         'A', '2'),
         'B', '2'),
@@ -52,6 +56,10 @@
         'W', '9'),
         'X', '9'),
         'Y', '9'),
-        'Z', '9')
+        'Z', '9'),
+        ' ', ''),
+        '-', ''),
+        ')', ''),
+        '(', '')
 
 {% endmacro %}
