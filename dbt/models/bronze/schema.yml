@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: bronze_user
+    columns:
+      - name: gender
+      - name: nationality
+      - name: title
+      - name: first_name
+      - name: last_name
+      - name: dob
+      - name: age
+      - name: uuid
+
+  - name: bronze_contacts
+    columns:
+      - name: uuid
+      - name: email
+      - name: phone
+      - name: cell
+
+  - name: bronze_login
+    columns:
+      - name: uuid
+      - name: username
+      - name: password
+
+  - name: bronze_location
+    columns:
+      - name: uuid
+      - name: street_number
+      - name: street_name
+      - name: city
+      - name: state
+      - name: country
+      - name: postcode
