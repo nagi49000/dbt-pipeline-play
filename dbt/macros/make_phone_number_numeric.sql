@@ -1,5 +1,4 @@
-{% macro make_cell_alphas_numeric(cell) %}
-
+{% macro make_phone_number_numeric(column_name) %}
         replace(
         replace(
         replace(
@@ -30,7 +29,7 @@
         replace(
         replace(
         replace(
-            cell,
+            {{ column_name }},
         'A', '2'),
         'B', '2'),
         'C', '2'),
@@ -61,5 +60,4 @@
         '-', ''),
         '(', ''),
         ')', '')
-
 {% endmacro %}
