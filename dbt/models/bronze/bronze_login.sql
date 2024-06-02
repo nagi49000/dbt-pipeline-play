@@ -1,3 +1,5 @@
+{{ config(constraints={'unique': ['uuid']}) }}
+
 with source as (
     select
         uuid,

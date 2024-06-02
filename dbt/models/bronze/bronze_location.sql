@@ -1,3 +1,5 @@
+{{ config(constraints={'unique': ['location_id']}) }}
+
 with source as (
     select
         concat(street_number, ' ', postcode) as location_id,
