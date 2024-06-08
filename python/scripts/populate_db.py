@@ -19,7 +19,9 @@ def get_randomuser_records(n_record: int = 3) -> Generator[dict, None, None]:
         yield flat_record
 
 
-def create_or_insert_into_duckdb(n_record: int, filename: str, tablename="raw_random_user"):
+def create_or_insert_into_duckdb(
+    n_record: int, filename: str, tablename="raw_random_user"
+):
     df = DataFrame.from_dict(get_randomuser_records(n_record))
     with duckdb.connect(str(filename)) as con:
         is_table_existing = tablename in con.sql("SHOW TABLES").df()["name"].values
