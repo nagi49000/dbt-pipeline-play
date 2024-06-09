@@ -25,3 +25,13 @@ There should already be a defined profile in the `./dbt/` directory. Any depende
 # in ./dbt/
 dbt deps
 ```
+
+### Run DBT
+
+The table builds and tests can be run via
+```bash
+# in ./dbt/
+dbt build
+```
+
+The table builds only can be run `dbt run`, and the tests only with `dbt test`.
