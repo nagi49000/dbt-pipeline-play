@@ -13,6 +13,7 @@ conda activate dbt-env
 
 Load in some data from https://randomuser.me/ into a duck db database
 ```bash
+mkdir -p ./dbt/data
 python python/scripts/populate_db.py
 ```
 
@@ -35,3 +36,12 @@ dbt build
 ```
 
 The table builds only can be run `dbt run`, and the tests only with `dbt test`.
+
+### Viewing docs
+
+Docs can be auto-generated and viewd in a browser by running
+```bash
+# in ./dbt/
+dbt docs generate
+dbt docs serve
+```
